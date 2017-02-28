@@ -18,6 +18,11 @@
     setImgInModal("");
     $("#genre_id").val("");
     $("#genre_name").val("");
+    var eleIds = ['genre_name', 'genre_id', 'imgUrl'];
+
+    eleIds.forEach(function(data, idx, arr){
+      removeErrorMsg("#"+data);
+    });
   }
 
   /**
