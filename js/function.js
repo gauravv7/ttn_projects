@@ -16,6 +16,8 @@
     $('#imgUrl').val("");
     imgContent = null;
     setImgInModal("");
+    $("#genre_id").val("");
+    $("#genre_name").val("");
   }
 
   /**
@@ -122,6 +124,12 @@
         404: function() {
           console.log( "page not found" );
         }
+      },
+      beforeSend: function(){
+        $("#overlay").show();
+      },
+      complete: function(){
+        $("#overlay").hide();
       },
       success: function(data,textStatus, XMLHttpRequest){
         var contentType = XMLHttpRequest.getResponseHeader('content-type').toLowerCase();
