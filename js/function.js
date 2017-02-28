@@ -165,6 +165,10 @@ function addImgRow(){
   $('#imgRows').append(makeThumb());
 }
 
+$("input").blur(function(e){
+  validateElement($(this).attr('id'));
+});
+
 $('#addPhotos').on('submit', function(e){
   console.log("on submit event handler");
   e.preventDefault();
