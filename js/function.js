@@ -61,6 +61,19 @@ function removeErrorMsg(ele){
 }
 
 /**
+ * [validateElement validate an element for required condition]
+ * @param  {[string]} ele [ID of the input element without '#']
+ * @return {[void]}     []
+ */
+function validateElement(ele){
+  var id = "#"+ele;
+  removeErrorMsg(id);
+  if(!validateRequired(id)){
+    makeErrorMsg(ele, $("label[for="+ele+"]").text() + " is required");
+  }
+}
+
+/**
  * [validateForm validating for for required validations]
  * @return {[type]} [description]
  */
@@ -68,11 +81,7 @@ function validateForm(){
   var eleIds = ['genre_name', 'genre_id', 'imgUrl'];
 
   eleIds.forEach(function(data, idx, arr){
-    var id = "#"+data;
-    removeErrorMsg(id);
-    if(!validateRequired(id)){
-      makeErrorMsg(data, $("label[for="+data+"]").text() + " is required");
-    }
+    validateElement(data);
   });
 }
 
