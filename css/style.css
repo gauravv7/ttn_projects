@@ -1,12 +1,23 @@
 ul.navbar-right{
   margin: 10px 0 !important;
 }
-#rcontent img{
-  width: 100px;
-  height: auto;
+#rcontent{
+  width: 150px;
+  min-height: 100px;
+  background-color: #ddd;
+  border-radius: 5px;
   margin: 0 17%;
+}
+#rcontent img{
+  width: 140px;
+  height: auto;
+  margin: 8% 3%;
 }
 table img{
   width: 100px;
   height: auto;
+}
+.form-group span{
+  display: inline-block;
+  color: red;
 }
